@@ -5,7 +5,7 @@
         <field name="arch" type="xml">
             <tree editable="top">
                 <field name="name"/>
-                <field name="type"/>
+                <field name="type" invisible="1"/>
             </tree>
         </field>
     </record>
@@ -15,6 +15,7 @@
         <field name="res_model">money.category</field>
         <field name="view_mode">tree</field>
         <field name = "domain">[('type', '=', 'income')]</field>
+        <field name = "context">{'default_type': 'income'}</field>
     </record>
 
     <record model="ir.actions.act_window" id="money_expense_category_action">
@@ -22,6 +23,7 @@
         <field name="res_model">money.category</field>
         <field name="view_mode">tree</field>
         <field name = "domain">[('type', '=', 'expense')]</field>
+        <field name = "context">{'default_type': 'expense'}</field>
     </record>
 
 </odoo>
