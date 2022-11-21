@@ -1,0 +1,14 @@
+<odoo>
+    <menuitem name="Money Manager" id="money_manager.menu_root"/>
+
+    <menuitem name="Income" id="money_income_menu" parent="money_manager.menu_root"
+        action="money_income_action"/>
+
+    <menuitem name="Expense" id="money_expense_menu" parent="money_manager.menu_root"
+        action="money_expense_action"/>
+
+    <menuitem name="Configuration" id="money_configuration_menu" parent="money_manager.menu_root"/>
+    <menuitem name="Categories" id="money_category_menu" parent="money_configuration_menu"/>
+    <menuitem name="Income" id="money_category_income_menu" parent="money_category_menu" action="money_income_category_action"/>
+    <menuitem name="Expense" id="money_category_expense_menu" parent="money_category_menu" action="money_expense_category_action"/>
+</odoo>

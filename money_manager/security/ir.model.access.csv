@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_money_income_admin,access_money_income_admin,model_money_income,base.group_user,1,1,1,1
+access_money_expense_admin,access_money_expense_admin,model_money_expense,base.group_user,1,1,1,1
+access_money_catgory_admin,access_money_category_admin,model_money_category,base.group_user,1,1,1,1

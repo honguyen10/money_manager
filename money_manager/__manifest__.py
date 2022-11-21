@@ -25,7 +25,12 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+
         'views/money_income_views.xml',
+        'views/money_expense_views.xml',
+        'views/money_category_views.xml',
+
+        'menu/menu_money_manager.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

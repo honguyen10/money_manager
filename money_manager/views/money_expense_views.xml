@@ -1,7 +1,7 @@
 <odoo>
-    <record model="ir.ui.view" id="money_income_tree_view">
-        <field name="name">money.income.tree.view</field>
-        <field name="model">money.income</field>
+    <record model="ir.ui.view" id="money_expense_tree_view">
+        <field name="name">money.expense.tree.view</field>
+        <field name="model">money.expense</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="partner_id"/>
@@ -12,9 +12,9 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="money_income_form_view">
-        <field name="name">money.income.form_view</field>
-        <field name="model">money.income</field>
+    <record model="ir.ui.view" id="money_expense_form_view">
+        <field name="name">money.expense.form_view</field>
+        <field name="model">money.expense</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -30,9 +30,9 @@
       </field>
     </record>
 
-    <record model="ir.actions.act_window" id="money_income_action">
-        <field name="name">Income</field>
-        <field name="res_model">money.income</field>
+    <record model="ir.actions.act_window" id="money_expense_action">
+        <field name="name">Expense</field>
+        <field name="res_model">money.expense</field>
         <field name="view_mode">tree,form</field>
     </record>
 

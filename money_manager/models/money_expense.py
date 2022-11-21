@@ -1,9 +1,9 @@
 from odoo import models, fields, api
 from datetime import datetime
 
-class MoneyIncome(models.Model):
-    _name = 'money.income'
-    _description = 'Income'
+class MoneyExpense(models.Model):
+    _name = 'money.expense'
+    _description = 'Expense'
     _rec_name = 'category'
 
     partner_id = fields.Many2one('res.partner', string='User Name',

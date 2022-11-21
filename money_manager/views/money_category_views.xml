@@ -1,0 +1,27 @@
+<odoo>
+    <record model="ir.ui.view" id="money_category_tree_view">
+        <field name="name">money.category.tree.view</field>
+        <field name="model">money.category</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name"/>
+                <field name="type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="money_income_category_action">
+        <field name="name">Income Categories</field>
+        <field name="res_model">money.category</field>
+        <field name="view_mode">tree</field>
+        <field name = "domain">[('type', '=', 'income')]</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="money_expense_category_action">
+        <field name="name">Expense Categories</field>
+        <field name="res_model">money.category</field>
+        <field name="view_mode">tree</field>
+        <field name = "domain">[('type', '=', 'expense')]</field>
+    </record>
+
+</odoo>
