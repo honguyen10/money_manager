@@ -14,4 +14,4 @@ class MoneyIncome(models.Model):
     category = fields.Many2one('money.category', string='Category',
         domain="[('type', '=', 'income')]", required=True)
     date = fields.Date(string='Date', default=datetime.today(), required=True)
-    comment = fields.Char(string='Comment')
+    description = fields.Char(string='Description')
