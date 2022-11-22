@@ -8,7 +8,10 @@ class MoneyExpense(models.Model):
 
     partner_id = fields.Many2one('res.partner', string='User Name',
         required=True)
+    account_id = fields.Many2one('money.account', string='Account',
+        domain="[('partner_id', '=', partner_id)]")
     amount = fields.Float(string='Amount', required=True)
-    category = fields.Char(string='Category', required=True)
+    category = fields.Many2one('money.category', string='Category',
+        domain="[('type', '=', 'expense')]", required=True)
     date = fields.Date(string='Date', default=datetime.today(), required=True)
     comment = fields.Char(string='Comment')

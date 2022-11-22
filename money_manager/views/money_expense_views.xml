@@ -5,6 +5,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="partner_id"/>
+                <field name="account_id"/>
                 <field name="amount"/>
                 <field name="category"/>
                 <field name="date"/>
@@ -20,6 +21,7 @@
                 <sheet>
                     <group>
                         <field name="partner_id"/>
+                        <field name="account_id"/>
                         <field name="amount"/>
                         <field name="category"/>
                         <field name="date"/>
