@@ -4,9 +4,10 @@
         <field name="model">money.income</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="currency_id" invisible="1"/>
                 <field name="partner_id"/>
                 <field name="account_id"/>
-                <field name="amount"/>
+                <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                 <field name="category"/>
                 <field name="date"/>
             </tree>
@@ -20,9 +21,10 @@
             <form>
                 <sheet>
                     <group>
+                        <field name="currency_id" invisible="1"/>
                         <field name="partner_id"/>
                         <field name="account_id"/>
-                        <field name="amount"/>
+                        <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                         <field name="category"/>
                         <field name="date"/>
                         <field name="description"/>

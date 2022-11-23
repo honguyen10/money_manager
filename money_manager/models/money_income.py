@@ -19,3 +19,12 @@ class MoneyIncome(models.Model):
         required=True)
     date = fields.Date(string='Date', default=datetime.today(), required=True)
     description = fields.Char(string='Description')
+    currency_id = fields.Many2one('res.currency', compute='_get_company_currency', readonly=True,
+        string="Currency")
+
+    def _get_company_currency(self):
+        for income in self:
+            if income.partner_id.company_id:
+                income.currency_id = income.sudo().partner_id.company_id.currency_id
+            else:
+                income.currency_id = self.env.company.currency_id

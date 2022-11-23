@@ -24,6 +24,8 @@
 
     # always loaded
     'data': [
+        'security/money_manager_groups.xml',
+        'security/ir_rule.xml',
         'security/ir.model.access.csv',
 
         'views/money_income_views.xml',
