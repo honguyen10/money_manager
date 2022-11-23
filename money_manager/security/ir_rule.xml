@@ -5,7 +5,7 @@
             <field name="name">User can edit own money income</field>
             <field name="model_id" ref="money_manager.model_money_income"/>
             <field name="domain_force">[('partner_id', '=', user.id)]</field>
-            <field name="groups" eval="[(4, ref('lib_base.group_money_manager_user'))]" />
+            <field name="groups" eval="[(4, ref('money_manager.group_money_manager_user'))]" />
             <field name="perm_read" eval="1" />
             <field name="perm_create" eval="1" />
             <field name="perm_write" eval="1" />
@@ -16,7 +16,7 @@
             <field name="name">User can edit own money expense</field>
             <field name="model_id" ref="money_manager.model_money_expense"/>
             <field name="domain_force">[('partner_id', '=', user.id)]</field>
-            <field name="groups" eval="[(4, ref('lib_base.group_money_manager_user'))]" />
+            <field name="groups" eval="[(4, ref('money_manager.group_money_manager_user'))]" />
             <field name="perm_read" eval="1" />
             <field name="perm_create" eval="1" />
             <field name="perm_write" eval="1" />
@@ -27,7 +27,7 @@
             <field name="name">User can edit own money category</field>
             <field name="model_id" ref="money_manager.model_money_category"/>
             <field name="domain_force">[('partner_id', '=', user.id)]</field>
-            <field name="groups" eval="[(4, ref('lib_base.group_money_manager_user'))]" />
+            <field name="groups" eval="[(4, ref('money_manager.group_money_manager_user'))]" />
             <field name="perm_read" eval="1" />
             <field name="perm_create" eval="1" />
             <field name="perm_write" eval="1" />
