@@ -7,12 +7,13 @@
     <menuitem name="Expense" id="money_expense_menu" parent="money_manager.menu_root"
         action="money_expense_action"/>
 
-    <menuitem name="Configuration" id="money_configuration_menu" parent="money_manager.menu_root"/>
-
+    <menuitem name="Configuration" id="money_configuration_menu" parent="money_manager.menu_root" sequence="100"/>
     <menuitem name="Categories" id="money_category_menu" parent="money_configuration_menu"/>
     <menuitem name="Income" id="money_category_income_menu" parent="money_category_menu" action="money_income_category_action"/>
     <menuitem name="Expense" id="money_category_expense_menu" parent="money_category_menu" action="money_expense_category_action"/>
-
     <menuitem name="Accounts" id="money_account_menu" parent="money_configuration_menu" action="money_account_action"/>
+
+    <menuitem name="Report" id="money_report_menu" parent="money_manager.menu_root" sequence="50"/>
+    <menuitem name="Income" id="money_income_report_menu" parent="money_report_menu" action="money_income_report_action"/>
 
 </odoo>

@@ -1,0 +1,21 @@
+<odoo>
+    <record id="money_income_graph_view" model="ir.ui.view">
+        <field name="name">money.income.graph.view</field>
+        <field name="model">money.income</field>
+        <field name="arch" type="xml">
+            <graph string="Income">
+                <field name="category"/>
+                <field name="amount"/>
+            </graph>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="money_income_report_action">
+        <field name="name">Income Report</field>
+        <field name="res_model">money.income</field>
+        <field name="view_mode">graph</field>
+        <field name="domain">[('partner_id', '=', partner_id)]</field>
+        <field name="context">{'search_default_filter_partner_id': partner_id}</field>
+    </record>
+
+</odoo>
