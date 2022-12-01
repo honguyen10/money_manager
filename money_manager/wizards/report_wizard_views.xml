@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <record id="income_report_wizard_form_view" model="ir.ui.view">
-        <field name="name">income.report.wizard.form.view</field>
-        <field name="model">income.report.wizard</field>
+    <record id="report_wizard_form_view" model="ir.ui.view">
+        <field name="name">report.wizard.form.view</field>
+        <field name="model">report.wizard</field>
         <field name="arch" type="xml">
-            <form string="Select Reporting Account Wizard">
+            <form>
                 <sheet>
                     <group>
                         <group>
@@ -18,15 +18,15 @@
                     </group>
                 </sheet>
                 <footer>
-                    <button name="select_income_report_account" string="Select" type="object" class="btn-primary"/>
+                    <button name="select_income_report_wizard" string="Select" type="object" class="btn-primary"/>
                     <button string="Cancel" class="btn-default" special="cancel" />
                 </footer>
             </form>
         </field>
     </record>
-    <record model="ir.actions.act_window" id="action_select_income_report_account">
-      <field name="name">Select Income Report Information</field>
-      <field name="res_model">income.report.wizard</field>
+    <record model="ir.actions.act_window" id="action_select_income_report_wizard">
+      <field name="name">Select Income Report Wizard</field>
+      <field name="res_model">report.wizard</field>
       <field name="view_mode">form</field>
       <field name="target">new</field>
     </record>

@@ -1,1 +1,1 @@
-from . import income_report_wizard
+from . import report_wizard
