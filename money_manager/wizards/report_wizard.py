@@ -11,6 +11,12 @@ class ReportWizard(models.TransientModel):
         domain="[('partner_id', '=', partner_id)]")
     date_from = fields.Date(string='From', default=datetime.today())
     date_to = fields.Date(string='To', default=datetime.today())
+    type = fields.Selection(
+        [
+            ('income', 'Income'),
+            ('expense', 'Expense')
+        ], string='Type'
+    )
 
     def select_income_report_wizard(self):
         domain = [
@@ -36,10 +42,10 @@ class ReportWizard(models.TransientModel):
             ('date', '<=', self.date_to)
             ]
         return {
-            'name': 'Income Report',
+            'name': 'Expense Report',
             'view_mode': 'graph',
-            'view_id': self.env.ref('money_manager.money_income_graph_view').id,
-            'res_model': 'money.income',
+            'view_id': self.env.ref('money_manager.money_expense_graph_view').id,
+            'res_model': 'money.expense',
             'type': 'ir.actions.act_window',
             'domain': domain,
         }

@@ -7,6 +7,7 @@
             <form>
                 <sheet>
                     <group>
+                        <field name="type" invisible="1"/>
                         <group>
                             <field name="partner_id"/>
                             <field name="account_id"/>
@@ -18,22 +19,27 @@
                     </group>
                 </sheet>
                 <footer>
-                    <button name="select_income_report_wizard" string="Select" type="object" class="btn-primary"/>
+                    <button name="select_income_report_wizard" string="Select" type="object" class="btn-primary"
+                        attrs="{'invisible':[('type', '=', 'expense')]}"/>
+                    <button name="select_expense_report_wizard" string="Select" type="object" class="btn-primary"
+                        attrs="{'invisible':[('type', '=', 'income')]}"/>
                     <button string="Cancel" class="btn-default" special="cancel" />
                 </footer>
             </form>
         </field>
     </record>
     <record model="ir.actions.act_window" id="action_select_income_report_wizard">
-      <field name="name">Select Income Report Wizard</field>
-      <field name="res_model">report.wizard</field>
-      <field name="view_mode">form</field>
-      <field name="target">new</field>
+        <field name="name">Select Income Report Wizard</field>
+        <field name="res_model">report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'default_type': 'income'}</field>
     </record>
     <record model="ir.actions.act_window" id="action_select_expense_report_wizard">
-      <field name="name">Select Expense Report Wizard</field>
-      <field name="res_model">report.wizard</field>
-      <field name="view_mode">form</field>
-      <field name="target">new</field>
+        <field name="name">Select Expense Report Wizard</field>
+        <field name="res_model">report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'default_type': 'expense'}</field>
     </record>
 </odoo>
