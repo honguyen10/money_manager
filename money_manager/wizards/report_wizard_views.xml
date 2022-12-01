@@ -10,7 +10,7 @@
                         <field name="type" invisible="1"/>
                         <group>
                             <field name="partner_id"/>
-                            <field name="account_id"/>
+                            <field name="account_ids" widget="many2many_tags"/>
                         </group>
                         <group>
                             <field name="date_from"/>
