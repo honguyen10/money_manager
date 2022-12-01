@@ -27,3 +27,19 @@ class ReportWizard(models.TransientModel):
             'type': 'ir.actions.act_window',
             'domain': domain,
         }
+
+    def select_expense_report_wizard(self):
+        domain = [
+            ('partner_id', '=', self.partner_id.id),
+            ('account_id', '=', self.account_id.id),
+            ('date', '>=', self.date_from),
+            ('date', '<=', self.date_to)
+            ]
+        return {
+            'name': 'Income Report',
+            'view_mode': 'graph',
+            'view_id': self.env.ref('money_manager.money_income_graph_view').id,
+            'res_model': 'money.income',
+            'type': 'ir.actions.act_window',
+            'domain': domain,
+        }

@@ -15,5 +15,6 @@
 
     <menuitem name="Report" id="money_report_menu" parent="money_manager.menu_root" sequence="50"/>
     <menuitem name="Income" id="money_income_report_menu" parent="money_report_menu" action="action_select_income_report_wizard"/>
+    <menuitem name="Expense" id="money_expense_report_menu" parent="money_report_menu" action="action_select_expense_report_wizard"/>
 
 </odoo>

@@ -14,4 +14,3 @@ class MoneyCategory(models.Model):
             ('expense', 'Expense')
         ], string='Type', required=True
     )
-    color = fields.Char(string='Color')
