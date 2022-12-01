@@ -15,7 +15,7 @@
     </record>
 
     <record model="ir.ui.view" id="money_income_form_view">
-        <field name="name">money.income.form_view</field>
+        <field name="name">money.income.form.view</field>
         <field name="model">money.income</field>
         <field name="arch" type="xml">
             <form>

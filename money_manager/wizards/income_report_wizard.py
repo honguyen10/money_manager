@@ -11,14 +11,13 @@ class IncomeReportWizard(models.TransientModel):
         domain="[('partner_id', '=', partner_id)]")
 
     def select_income_report_account(self):
+        domain = [('partner_id', '=', self.partner_id.id), ('account_id', '=', self.account_id.id)]
         return {
-            'name':'Update Quantity',
+            'name': 'Income Report',
             'view_mode': 'graph',
-            'view_id': self.env.ref('money_manager.money_income_report_action').id,
-            # 'view_type': 'graph',
+            'view_id': self.env.ref('money_manager.money_income_graph_view').id,
             'res_model': 'money.income',
             'type': 'ir.actions.act_window',
-            'target': 'new',
-            'domain': [],
-            # 'context': {'default_book_id': self.id}
+            'domain': domain,
+            'context': {},
         }
