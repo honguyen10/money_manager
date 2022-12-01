@@ -33,6 +33,7 @@
         'views/money_category_views.xml',
         'views/money_account_views.xml',
         'views/money_income_graph_views.xml',
+        'wizards/income_report_wizard_views.xml',
 
         'menu/menu_money_manager.xml',
     ],

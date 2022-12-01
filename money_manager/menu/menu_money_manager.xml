@@ -14,6 +14,6 @@
     <menuitem name="Accounts" id="money_account_menu" parent="money_configuration_menu" action="money_account_action"/>
 
     <menuitem name="Report" id="money_report_menu" parent="money_manager.menu_root" sequence="50"/>
-    <menuitem name="Income" id="money_income_report_menu" parent="money_report_menu" action="money_income_report_action"/>
+    <menuitem name="Income" id="money_income_report_menu" parent="money_report_menu" action="action_select_income_report_account"/>
 
 </odoo>

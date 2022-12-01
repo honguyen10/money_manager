@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="income_report_wizard_form_view" model="ir.ui.view">
+        <field name="name">income.report.wizard.form.view</field>
+        <field name="model">income.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Select Reporting Account Wizard">
+                <sheet>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="account_id"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="select_income_report_account" string="Select" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_select_income_report_account">
+      <field name="name">Select Report Account</field>
+      <field name="res_model">income.report.wizard</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+    </record>
+</odoo>

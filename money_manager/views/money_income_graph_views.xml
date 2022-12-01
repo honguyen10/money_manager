@@ -14,8 +14,6 @@
         <field name="name">Income Report</field>
         <field name="res_model">money.income</field>
         <field name="view_mode">graph</field>
-        <field name="domain">[('partner_id', '=', partner_id)]</field>
-        <field name="context">{'search_default_filter_partner_id': partner_id}</field>
     </record>
 
 </odoo>
