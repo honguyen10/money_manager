@@ -7,8 +7,14 @@
             <form string="Select Reporting Account Wizard">
                 <sheet>
                     <group>
-                        <field name="partner_id"/>
-                        <field name="account_id"/>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="account_id"/>
+                        </group>
+                        <group>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                        </group>
                     </group>
                 </sheet>
                 <footer>
@@ -19,7 +25,7 @@
         </field>
     </record>
     <record model="ir.actions.act_window" id="action_select_income_report_account">
-      <field name="name">Select Report Account</field>
+      <field name="name">Select Income Report Information</field>
       <field name="res_model">income.report.wizard</field>
       <field name="view_mode">form</field>
       <field name="target">new</field>
