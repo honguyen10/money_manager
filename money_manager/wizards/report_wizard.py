@@ -49,3 +49,8 @@ class ReportWizard(models.TransientModel):
             'type': 'ir.actions.act_window',
             'domain': domain,
         }
+
+    @api.onchange('partner_id')
+    def get_accounts(self):
+        self.account_ids = self.env['money.account'].search(
+            [('partner_id', '=', self.partner_id.id)]).ids
