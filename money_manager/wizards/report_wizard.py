@@ -13,7 +13,8 @@ class ReportWizard(models.TransientModel):
     date_from = fields.Date(string='From',
         default=datetime.today().replace(day=1))
     date_to = fields.Date(string='To',
-        default=datetime.today().replace(day=1) + relativedelta(months=1) - relativedelta(days=1))
+        default=datetime.today().replace(day=1) + \
+            relativedelta(months=1) - relativedelta(days=1))
     type = fields.Selection(
         [
             ('income', 'Income'),
