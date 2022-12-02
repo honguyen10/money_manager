@@ -1,6 +1,7 @@
 
 from odoo import api, fields, models, _
 from datetime import datetime
+from dateutil.relativedelta import relativedelta
 
 
 class ReportWizard(models.TransientModel):
@@ -9,8 +10,10 @@ class ReportWizard(models.TransientModel):
     partner_id = fields.Many2one('res.partner', string='User Name')
     account_ids = fields.Many2many('money.account', string='Account',
         domain="[('partner_id', '=', partner_id)]")
-    date_from = fields.Date(string='From', default=datetime.today())
-    date_to = fields.Date(string='To', default=datetime.today())
+    date_from = fields.Date(string='From',
+        default=datetime.today().replace(day=1))
+    date_to = fields.Date(string='To',
+        default=datetime.today().replace(day=1) + relativedelta(months=1) - relativedelta(days=1))
     type = fields.Selection(
         [
             ('income', 'Income'),
