@@ -28,7 +28,8 @@ class ReportWizard(models.TransientModel):
         return {
             'name': 'Income Report',
             'view_mode': 'graph',
-            'view_id': self.env.ref('money_manager.money_income_graph_view').id,
+            'view_id': self.env.ref(
+                'money_manager.money_income_graph_view').id,
             'res_model': 'money.income',
             'type': 'ir.actions.act_window',
             'domain': domain,
@@ -44,13 +45,14 @@ class ReportWizard(models.TransientModel):
         return {
             'name': 'Expense Report',
             'view_mode': 'graph',
-            'view_id': self.env.ref('money_manager.money_expense_graph_view').id,
+            'view_id': self.env.ref(
+                'money_manager.money_expense_graph_view').id,
             'res_model': 'money.expense',
             'type': 'ir.actions.act_window',
             'domain': domain,
         }
 
     @api.onchange('partner_id')
-    def get_accounts(self):
+    def onchange_accounts(self):
         self.account_ids = self.env['money.account'].search(
             [('partner_id', '=', self.partner_id.id)]).ids
