@@ -34,7 +34,10 @@
         'views/money_account_views.xml',
         'views/money_income_graph_views.xml',
         'views/money_expense_graph_views.xml',
+
         'wizards/report_wizard_views.xml',
+
+        'reports/report_template.xml',
 
         'menu/menu_money_manager.xml',
     ],

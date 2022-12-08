@@ -19,10 +19,11 @@
                     </group>
                 </sheet>
                 <footer>
-                    <button name="select_income_report_wizard" string="Select" type="object" class="btn-primary"
+                    <button name="show_income_graph_view" string="View graph" type="object" class="btn-primary"
                         attrs="{'invisible':[('type', '=', 'expense')]}"/>
-                    <button name="select_expense_report_wizard" string="Select" type="object" class="btn-primary"
+                    <button name="show_expense_graph_view" string="View graph" type="object" class="btn-primary"
                         attrs="{'invisible':[('type', '=', 'income')]}"/>
+                    <button name="button_print_income_report" string="Print report" type="object"/>
                     <button string="Cancel" class="btn-default" special="cancel" />
                 </footer>
             </form>

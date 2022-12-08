@@ -22,7 +22,7 @@ class ReportWizard(models.TransientModel):
         ], string='Type'
     )
 
-    def select_income_report_wizard(self):
+    def show_income_graph_view(self):
         domain = [
             ('partner_id', '=', self.partner_id.id),
             ('account_id', 'in', self.account_ids.ids),
@@ -39,7 +39,7 @@ class ReportWizard(models.TransientModel):
             'domain': domain,
         }
 
-    def select_expense_report_wizard(self):
+    def show_expense_graph_view(self):
         domain = [
             ('partner_id', '=', self.partner_id.id),
             ('account_id', 'in', self.account_ids.ids),
@@ -60,3 +60,7 @@ class ReportWizard(models.TransientModel):
     def onchange_accounts(self):
         self.account_ids = self.env['money.account'].search(
             [('partner_id', '=', self.partner_id.id)]).ids
+
+    def button_print_income_report(self):
+        return self.env.ref(
+            'money_manager.action_print_income_report').report_action(self)

@@ -10,7 +10,7 @@
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="money_expense_report_action">
+    <record model="ir.actions.act_window" id="money_expense_graph_view_action">
         <field name="name">Expense Report</field>
         <field name="res_model">money.expense</field>
         <field name="view_mode">graph</field>
