@@ -4,7 +4,7 @@
         <field name="model">money.expense</field>
         <field name="arch" type="xml">
             <graph string="Expense">
-                <field name="category"/>
+                <field name="category_id"/>
                 <field name="amount"/>
             </graph>
         </field>

@@ -4,14 +4,14 @@ from datetime import datetime
 class MoneyIncome(models.Model):
     _name = 'money.income'
     _description = 'Income'
-    _rec_name = 'category'
+    _rec_name = 'category_id'
 
     partner_id = fields.Many2one('res.partner', string='User Name',
         required=True)
     account_id = fields.Many2one('money.account', string='Account',
         domain="[('partner_id', '=', partner_id)]")
     amount = fields.Float(string='Amount', required=True)
-    category = fields.Many2one('money.category', string='Category',
+    category_id = fields.Many2one('money.category', string='Category',
         domain="[\
             ('type', '=', 'income'),\
             ('partner_id', '=', partner_id),\

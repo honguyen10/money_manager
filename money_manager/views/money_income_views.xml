@@ -8,7 +8,7 @@
                 <field name="partner_id"/>
                 <field name="account_id"/>
                 <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
-                <field name="category"/>
+                <field name="category_id"/>
                 <field name="date"/>
             </tree>
         </field>
@@ -25,7 +25,7 @@
                         <field name="partner_id"/>
                         <field name="account_id"/>
                         <field name="amount" widget="monetary" options="{'currency_field': 'currency_id'}"/>
-                        <field name="category"/>
+                        <field name="category_id"/>
                         <field name="date"/>
                         <field name="description"/>
                     </group>

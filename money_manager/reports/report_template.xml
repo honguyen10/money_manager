@@ -2,10 +2,24 @@
     <data>
         <template id="income_report_document">
             <t t-call="web.external_layout">
-            <div class="page">
-                <p>hi</p>
-            </div>
-                
+                <div class="page">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th width="25%" class="text-center">Account</th>
+                            <th width="25%" class="text-center">Amount</th>
+                            <th width="25%" class="text-center">Category</th>
+                            <th width="25%" class="text-center">Date</th>
+                        </tr>
+                        <t t-foreach="o.get_income_data()" t-as="income">
+                        <tr>
+                            <td><p t-esc="income.account_id.name"/></td>
+                            <td><p t-esc="income.amount"/></td>
+                            <td><p t-esc="income.category_id.name"/></td>
+                            <td><p t-esc="income.date"/></td>
+                        </tr>
+                        </t>
+                    </table>
+                </div>
             </t>
         </template>
         <template id="income_report">
