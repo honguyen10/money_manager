@@ -5,17 +5,17 @@
                 <div class="page">
                     <table class="table table-bordered">
                         <tr>
-                            <th width="25%" class="text-center">Account</th>
-                            <th width="25%" class="text-center">Amount</th>
-                            <th width="25%" class="text-center">Category</th>
-                            <th width="25%" class="text-center">Date</th>
+                            <th class="text-center">Account</th>
+                            <th class="text-center">Category</th>
+                            <th class="text-center">Amount</th>
+                            <th class="text-center">Date</th>
                         </tr>
                         <t t-foreach="o.get_income_data()" t-as="income">
                         <tr>
                             <td><p t-esc="income.account_id.name"/></td>
-                            <td><p t-esc="income.amount"/></td>
                             <td><p t-esc="income.category_id.name"/></td>
-                            <td><p t-esc="income.date"/></td>
+                            <td><p t-esc="income.amount"/></td>
+                            <td><p t-esc="income.date" t-options="{'widget': 'date','format': 'dd-MM-yyyy'}"/></td>
                         </tr>
                         </t>
                     </table>
