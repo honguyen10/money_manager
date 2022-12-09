@@ -23,7 +23,7 @@
                         attrs="{'invisible':[('type', '=', 'expense')]}"/>
                     <button name="show_expense_graph_view" string="View graph" type="object" class="btn-primary"
                         attrs="{'invisible':[('type', '=', 'income')]}"/>
-                    <button name="button_print_income_report" string="Print report" type="object"/>
+                    <button name="button_print_money_report" string="Print report" type="object"/>
                     <button string="Cancel" class="btn-default" special="cancel" />
                 </footer>
             </form>

@@ -1,6 +1,6 @@
 <odoo>
     <data>
-        <template id="income_report_document">
+        <template id="money_report_document">
             <t t-call="web.external_layout">
                 <div class="page">
                     <table class="table table-bordered">
@@ -10,32 +10,32 @@
                             <th class="text-center">Amount</th>
                             <th class="text-center">Date</th>
                         </tr>
-                        <t t-foreach="o.get_income_data()" t-as="income">
+                        <t t-foreach="o.get_money_data()" t-as="data">
                         <tr>
-                            <td><p t-esc="income.account_id.name"/></td>
-                            <td><p t-esc="income.category_id.name"/></td>
-                            <td><p t-esc="income.amount"/></td>
-                            <td><p t-esc="income.date" t-options="{'widget': 'date','format': 'dd-MM-yyyy'}"/></td>
+                            <td><p t-esc="data.account_id.name"/></td>
+                            <td><p t-esc="data.category_id.name"/></td>
+                            <td><p t-esc="data.amount"/></td>
+                            <td><p t-esc="data.date" t-options="{'widget': 'date','format': 'dd-MM-yyyy'}"/></td>
                         </tr>
                         </t>
                     </table>
                 </div>
             </t>
         </template>
-        <template id="income_report">
+        <template id="money_report">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
-                    <t t-call="money_manager.income_report_document" t-lang="user.partner_id.lang"/>
+                    <t t-call="money_manager.money_report_document" t-lang="user.partner_id.lang"/>
                 </t>
             </t>
         </template>
         <report
-            id="action_print_income_report"
-            string="Income Report"
+            id="action_print_money_report"
+            string="Money Report"
             model="report.wizard"
             report_type="qweb-pdf"
-            file="money_manager.income_report" 
-            name="money_manager.income_report"
+            file="money_manager.money_report" 
+            name="money_manager.money_report"
             print_report_name="'%s' %(object.partner_id.name)"
         />
     </data>

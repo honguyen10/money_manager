@@ -61,15 +61,23 @@ class ReportWizard(models.TransientModel):
         self.account_ids = self.env['money.account'].search(
             [('partner_id', '=', self.partner_id.id)]).ids
 
-    def button_print_income_report(self):
+    def button_print_money_report(self):
         return self.env.ref(
-            'money_manager.action_print_income_report').report_action(self)
+            'money_manager.action_print_money_report').report_action(self)
 
-    def get_income_data(self):
-        income_data = self.env['money.income'].search([
-            ('partner_id', '=', self.partner_id.id),
-            ('account_id', 'in', self.account_ids.ids),
-            ('date', '>=', self.date_from),
-            ('date', '<=', self.date_to)
-            ])
-        return income_data
+    def get_money_data(self):
+        if self.type == 'income':
+            data = self.env['money.income'].search([
+                ('partner_id', '=', self.partner_id.id),
+                ('account_id', 'in', self.account_ids.ids),
+                ('date', '>=', self.date_from),
+                ('date', '<=', self.date_to)
+                ])
+        else:
+            data = self.env['money.expense'].search([
+                ('partner_id', '=', self.partner_id.id),
+                ('account_id', 'in', self.account_ids.ids),
+                ('date', '>=', self.date_from),
+                ('date', '<=', self.date_to)
+                ])
+        return data
