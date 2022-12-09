@@ -5,6 +5,7 @@ class MoneyIncome(models.Model):
     _name = 'money.income'
     _description = 'Income'
     _rec_name = 'category_id'
+    _order = 'date DESC'
 
     partner_id = fields.Many2one('res.partner', string='User Name',
         required=True)

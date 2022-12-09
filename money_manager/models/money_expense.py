@@ -5,6 +5,7 @@ class MoneyExpense(models.Model):
     _name = 'money.expense'
     _description = 'Expense'
     _rec_name = 'category_id'
+    _order = 'date DESC'
 
     partner_id = fields.Many2one('res.partner', string='User Name',
         required=True)
