@@ -6,9 +6,10 @@ from dateutil.relativedelta import relativedelta
 class ReportWizard(models.TransientModel):
     _name = "report.wizard"
 
-    partner_id = fields.Many2one('res.partner', string='User Name')
+    partner_id = fields.Many2one('res.partner', string='User Name',
+        required=True)
     account_ids = fields.Many2many('money.account', string='Account',
-        domain="[('partner_id', '=', partner_id)]")
+        domain="[('partner_id', '=', partner_id)]", required=True)
     date_from = fields.Date(string='From',
         default=datetime.today().replace(day=1))
     date_to = fields.Date(string='To',
