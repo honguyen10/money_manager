@@ -8,22 +8,23 @@
                     <br/>
                     <p style="font-size: 20px"><b>User name: </b><t t-esc="o.partner_id.name"/></p>
                     <br/>
-                    <table class="table table-bordered">
-                        <tr>
-                            <th class="text-center">Account</th>
-                            <th class="text-center">Category</th>
-                            <th class="text-center">Amount</th>
-                            <th class="text-center">Date</th>
-                        </tr>
-                        <t t-foreach="o.get_money_data()" t-as="data">
-                        <tr>
-                            <td><p t-esc="data.account_id.name"/></td>
-                            <td><p t-esc="data.category_id.name"/></td>
-                            <td><p t-esc="data.amount"/></td>
-                            <td><p t-esc="data.date" t-options="{'widget': 'date','format': 'dd/MM/yyyy'}"/></td>
-                        </tr>
-                        </t>
-                    </table>
+                    <t t-foreach="o.get_money_data()" t-as="data">
+                        <p style="font-size: 18px">- Account: <t t-esc="data.name"/></p>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th class="text-center">Category</th>
+                                <th class="text-center">Amount</th>
+                                <th class="text-center">Date</th>
+                            </tr>
+                            <t t-foreach="data_value" t-as="value">
+                            <tr>
+                                <td><p t-esc="value.category_id.name"/></td>
+                                <td><p t-esc="value.amount"/></td>
+                                <td><p t-esc="value.date" t-options="{'widget': 'date','format': 'dd/MM/yyyy'}"/></td>
+                            </tr>
+                            </t>
+                        </table>
+                    </t>
                 </div>
             </t>
         </template>
