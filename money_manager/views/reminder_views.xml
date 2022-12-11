@@ -24,7 +24,10 @@
                         <field name="partner_id"/>
                         <field name="name"/>
                         <field name="frequency"/>
-                        <field name="date"/>
+                        <field name="date" string="Day"
+                            attrs="{'invisible': [('frequency', '!=', 'once')]}"/>
+                        <field name="date" string="Reminder Start Date"
+                            attrs="{'invisible': [('frequency', '=', 'once')]}"/>
                         <field name="time" widget="float_time"/>
                         <field name="description"/>
                     </group>
