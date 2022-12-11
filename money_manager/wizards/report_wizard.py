@@ -67,19 +67,9 @@ class ReportWizard(models.TransientModel):
     def get_money_data(self):
         data = {}
         if self.type == 'income':
-            res = self.env['money.income'].search([
-                ('partner_id', '=', self.partner_id.id),
-                ('account_id', 'in', self.account_ids.ids),
-                ('date', '>=', self.date_from),
-                ('date', '<=', self.date_to)
-                ])
+            res = self.env['money.income'].search(self.get_records())
         else:
-            res = self.env['money.expense'].search([
-                ('partner_id', '=', self.partner_id.id),
-                ('account_id', 'in', self.account_ids.ids),
-                ('date', '>=', self.date_from),
-                ('date', '<=', self.date_to)
-                ])
+            res = self.env['money.expense'].search(self.get_records())
         for rec in res:
             if rec.account_id not in data.keys():
                 data[rec.account_id] = [rec]
