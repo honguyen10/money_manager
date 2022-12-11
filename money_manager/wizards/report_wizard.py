@@ -22,13 +22,18 @@ class ReportWizard(models.TransientModel):
         ], string='Type'
     )
 
-    def show_income_graph_view(self):
+    def get_records(self):
         domain = [
             ('partner_id', '=', self.partner_id.id),
-            ('account_id', 'in', self.account_ids.ids),
-            ('date', '>=', self.date_from),
-            ('date', '<=', self.date_to)
+            ('account_id', 'in', self.account_ids.ids)
             ]
+        if self.date_from:
+            domain.append(('date', '>=', self.date_from))
+        if self.date_to:
+            domain.append(('date', '<=', self.date_to))
+        return domain
+
+    def show_income_graph_view(self):
         return {
             'name': 'Income Report',
             'view_mode': 'graph',
@@ -36,16 +41,10 @@ class ReportWizard(models.TransientModel):
                 'money_manager.money_income_graph_view').id,
             'res_model': 'money.income',
             'type': 'ir.actions.act_window',
-            'domain': domain,
+            'domain': self.get_records()
         }
 
     def show_expense_graph_view(self):
-        domain = [
-            ('partner_id', '=', self.partner_id.id),
-            ('account_id', 'in', self.account_ids.ids),
-            ('date', '>=', self.date_from),
-            ('date', '<=', self.date_to)
-            ]
         return {
             'name': 'Expense Report',
             'view_mode': 'graph',
@@ -53,7 +52,7 @@ class ReportWizard(models.TransientModel):
                 'money_manager.money_expense_graph_view').id,
             'res_model': 'money.expense',
             'type': 'ir.actions.act_window',
-            'domain': domain,
+            'domain': self.get_records()
         }
 
     @api.onchange('partner_id')
