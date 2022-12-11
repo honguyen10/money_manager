@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'mail'],
 
     # always loaded
     'data': [
@@ -39,6 +39,9 @@
         'wizards/report_wizard_views.xml',
 
         'reports/report_template.xml',
+
+        'data/ir_cron_data.xml',
+        'data/reminder_template_data.xml',
 
         'menu/menu_money_manager.xml',
     ],

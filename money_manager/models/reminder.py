@@ -22,3 +22,12 @@ class Reminder(models.Model):
     )
     date = fields.Date(default=datetime.today(), required=True)
     time = fields.Float(required=True)
+
+    @api.model
+    def _cron_send_reminder_email(self):
+        template = self.env.ref(
+                'money_manager.reminder_template_data')
+        template.send_mail(
+                self.partner_id.id,
+                notif_layout='mail.mail_notification_light',
+                force_send=True)
