@@ -37,7 +37,7 @@
         <field name="context">{'default_type': 'income'}</field>
     </record>
     <record model="ir.actions.act_window" id="action_select_expense_report_wizard">
-        <field name="name">Select Expense Report Wizard</field>
+        <field name="name">Select Expenses Report Wizard</field>
         <field name="res_model">report.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
