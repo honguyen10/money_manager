@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from datetime import datetime
 
 
 class Reminder(models.Model):
@@ -19,5 +20,5 @@ class Reminder(models.Model):
             ('once_a_year', 'Once a year')
         ], string='Reminder Frequency', required=True
     )
-    date = fields.Date()
-    time = fields.Float()
+    date = fields.Date(default=datetime.today(), required=True)
+    time = fields.Float(required=True)
