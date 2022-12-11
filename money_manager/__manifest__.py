@@ -34,6 +34,7 @@
         'views/money_account_views.xml',
         'views/money_income_graph_views.xml',
         'views/money_expense_graph_views.xml',
+        'views/reminder_views.xml',
 
         'wizards/report_wizard_views.xml',
 
