@@ -30,3 +30,10 @@ class Reminder(models.Model):
                 self.partner_id.id,
                 notif_layout='mail.mail_notification_light',
                 force_send=True)
+
+    def set_reminder_interval(self, cr, uid, context=None):
+        try:
+            cron = self.sudo().env.ref('my_module.my_cron_external_id')
+            cron.sudo().write({'nextcall': datetime.now()})
+        except Exception as e:
+            pass
