@@ -16,8 +16,7 @@ class Reminder(models.Model):
             ('once', 'Once'),
             ('daily', 'Daily'),
             ('once_a_week', 'Once a week'),
-            ('once_a_month', 'Once a month'),
-            ('once_a_year', 'Once a year')
+            ('once_a_month', 'Once a month')
         ], string='Reminder Frequency', required=True
     )
     date = fields.Date(default=datetime.today(), required=True)
