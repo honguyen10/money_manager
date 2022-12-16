@@ -45,17 +45,6 @@
             <field name="perm_unlink" eval="1" />
         </record>
 
-        <record model="ir.rule" id="user_can_edit_own_reminder">
-            <field name="name">User can edit own reminders</field>
-            <field name="model_id" ref="money_manager.model_reminder"/>
-            <field name="domain_force">[('partner_id', '=', user.partner_id.id)]</field>
-            <field name="groups" eval="[(4, ref('money_manager.group_money_manager_user'))]" />
-            <field name="perm_read" eval="1" />
-            <field name="perm_create" eval="1" />
-            <field name="perm_write" eval="1" />
-            <field name="perm_unlink" eval="1" />
-        </record>
-
         <record model="ir.rule" id="admin_can_edit_all_money_income">
             <field name="name">Admin can edit all money income</field>
             <field name="model_id" ref="money_manager.model_money_income"/>
@@ -92,17 +81,6 @@
         <record model="ir.rule" id="admin_can_edit_all_money_account">
             <field name="name">Admin can edit all money accounts</field>
             <field name="model_id" ref="money_manager.model_money_account"/>
-            <field name="domain_force">[(1, '=', 1)]</field>
-            <field name="groups" eval="[(4, ref('money_manager.group_money_manager_admin'))]" />
-            <field name="perm_read" eval="1" />
-            <field name="perm_create" eval="1" />
-            <field name="perm_write" eval="1" />
-            <field name="perm_unlink" eval="1" />
-        </record>
-
-        <record model="ir.rule" id="admin_can_edit_all_reminder">
-            <field name="name">Admin can edit all reminders</field>
-            <field name="model_id" ref="money_manager.model_reminder"/>
             <field name="domain_force">[(1, '=', 1)]</field>
             <field name="groups" eval="[(4, ref('money_manager.group_money_manager_admin'))]" />
             <field name="perm_read" eval="1" />

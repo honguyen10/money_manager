@@ -34,14 +34,14 @@
         'views/money_account_views.xml',
         'views/money_income_graph_views.xml',
         'views/money_expense_graph_views.xml',
-        'views/reminder_views.xml',
+        'views/res_partner_views.xml',
 
         'wizards/report_wizard_views.xml',
 
         'reports/report_template.xml',
 
-        'data/ir_cron_data.xml',
-        'data/reminder_template_data.xml',
+        # 'data/ir_cron_data.xml',
+        # 'data/reminder_template_data.xml',
 
         'menu/menu_money_manager.xml',
     ],
