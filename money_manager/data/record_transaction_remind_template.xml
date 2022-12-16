@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-   <record id="reminder_template_data" model="mail.template">
-       <field name="name">Reminder Template Data</field>
+   <record id="record_transaction_remind_template" model="mail.template">
+       <field name="name">Record Transaction Remind Template</field>
        <field name="model_id" ref="money_manager.model_res_partner"/>
        <field name="auto_delete" eval="True"/>
        <field name="email_from"></field>
-       <field name="email_to">{{object.email}}</field>
+       <field name="email_to">{{object.email_formatted}}</field>
        <field name="subject">Reminder From Money Manager</field>
        <field name="body_html"><![CDATA[<html>
+            <p>Dear <t t-out="object.name"/>,</p>
             <p>Have you recorded your transactions today?</p>
         </html>
        ]]></field>

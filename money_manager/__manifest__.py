@@ -40,8 +40,8 @@
 
         'reports/report_template.xml',
 
-        # 'data/ir_cron_data.xml',
-        # 'data/reminder_template_data.xml',
+        'data/ir_cron_data.xml',
+        'data/record_transaction_remind_template.xml',
 
         'menu/menu_money_manager.xml',
     ],
