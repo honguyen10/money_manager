@@ -1,5 +1,6 @@
 from odoo import models, fields, api
 
+
 class MoneyAccount(models.Model):
     _name = 'money.account'
     _description = 'Accounts'

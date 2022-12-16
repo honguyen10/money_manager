@@ -12,7 +12,6 @@
     <menuitem name="Income" id="money_category_income_menu" parent="money_category_menu" action="money_income_category_action"/>
     <menuitem name="Expenses" id="money_category_expense_menu" parent="money_category_menu" action="money_expense_category_action"/>
     <menuitem name="Accounts" id="money_account_menu" parent="money_configuration_menu" action="money_account_action"/>
-    <menuitem name="Reminders" id="reminder_menu" parent="money_configuration_menu" action="reminder_action"/>
 
     <menuitem name="Reporting" id="money_report_menu" parent="money_manager.menu_root" sequence="50"/>
     <menuitem name="Income" id="money_income_report_menu" parent="money_report_menu" action="action_select_income_report_wizard"/>

@@ -1,5 +1,6 @@
 from odoo import models, fields, api
 
+
 class MoneyCategory(models.Model):
     _name = 'money.category'
     _description = 'Categories'

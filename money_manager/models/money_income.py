@@ -1,6 +1,7 @@
 from odoo import models, fields, api
 from datetime import datetime
 
+
 class MoneyIncome(models.Model):
     _name = 'money.income'
     _description = 'Income'

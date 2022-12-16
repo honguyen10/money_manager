@@ -1,6 +1,7 @@
 from odoo import models, fields, api
 from datetime import datetime
 
+
 class MoneyExpense(models.Model):
     _name = 'money.expense'
     _description = 'Expense'
