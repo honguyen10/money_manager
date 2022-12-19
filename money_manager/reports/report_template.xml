@@ -10,11 +10,11 @@
                     <br/>
                     <t t-foreach="o.get_money_data()" t-as="data">
                         <p style="font-size: 18px">- Account: <t t-esc="data.name"/></p>
-                        <table class="table table-bordered">
+                        <table class="table table-bordered" style="border:1px">
                             <tr>
-                                <th class="text-center">Category</th>
-                                <th class="text-center">Amount</th>
-                                <th class="text-center">Date</th>
+                                <th width="30%" class="text-center">Category</th>
+                                <th width="30%" class="text-center">Amount</th>
+                                <th width="30%" class="text-center">Date</th>
                             </tr>
                             <t t-foreach="data_value" t-as="value">
                             <tr>
@@ -23,6 +23,19 @@
                                 <td><p t-esc="value.date" t-options="{'widget': 'date','format': 'dd/MM/yyyy'}"/></td>
                             </tr>
                             </t>
+                        </table>
+                        <table class="table table-borderless">
+                            <tr>
+                                <td width="30%"><b>Total</b></td>
+                                <td width="30%">
+                                    <t t-set="total" t-value="0"/>
+                                    <t t-foreach="data_value" t-as="value">
+                                        <t t-set="total" t-value="total + value.amount"/>
+                                    </t>
+                                    <p t-esc="total"/>
+                                </td>
+                                <td width="30%"></td>
+                            </tr>
                         </table>
                     </t>
                 </div>
