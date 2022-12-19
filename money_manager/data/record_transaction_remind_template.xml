@@ -8,7 +8,7 @@
        <field name="email_to">{{object.email_formatted}}</field>
        <field name="subject">Reminder From Money Manager</field>
        <field name="body_html"><![CDATA[<html>
-            <p>Dear <t t-out="object.name"/>,</p>
+            <p>Hi <t t-out="object.name"/>,</p>
             <p>Have you recorded your transactions today?</p>
         </html>
        ]]></field>
