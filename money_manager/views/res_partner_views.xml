@@ -8,7 +8,6 @@
                 <page string="Money Manager">
                     <group>
                         <field name="record_transaction_remind"/>
-                        <field name="report_notification"/>
                     </group>
                 </page>
             </xpath>

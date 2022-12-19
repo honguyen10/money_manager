@@ -6,7 +6,6 @@ class ResPartner(models.Model):
 
     record_transaction_remind = fields.Boolean(
         string='Record Transaction Remind')
-    report_notification = fields.Boolean(string='Report Notification')
 
     @api.model
     def cron_send_record_transaction_remind(self):
